@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TicketParcial.Areas.Identity.Data;
+using TicketParcial.Models;
 
 namespace TicketParcial.Data
 {
@@ -23,5 +24,7 @@ namespace TicketParcial.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        
     }
 }

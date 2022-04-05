@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using TicketParcial.Infrastructure;
 
 namespace TicketParcial
 {
@@ -25,6 +27,8 @@ namespace TicketParcial
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddDbContext<TicketTurnoContext>(options => options.UseSqlServer
+            (Configuration.GetConnectionString("TicketParcialDBContextConnection")));
             services.AddHttpClient<ReCaptcha>(x =>
             {
                 x.BaseAddress = new Uri("https://www.google.com/recaptcha/api/siteverify");
@@ -57,7 +61,7 @@ namespace TicketParcial
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=TicketTurno}/{action=Create}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

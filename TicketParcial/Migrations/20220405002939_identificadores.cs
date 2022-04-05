@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketParcial.Migrations
 {
-    public partial class newtest : Migration
+    public partial class identificadores : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

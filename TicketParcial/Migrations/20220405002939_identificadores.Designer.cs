@@ -10,8 +10,8 @@ using TicketParcial.Data;
 namespace TicketParcial.Migrations
 {
     [DbContext(typeof(TicketParcialDBContext))]
-    [Migration("20220404184516_new test")]
-    partial class newtest
+    [Migration("20220405002939_identificadores")]
+    partial class identificadores
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
