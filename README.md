@@ -5,6 +5,7 @@ Pasos a tomar en cuenta:
 *Archivos importantes antes de correr el proyecto en tu maquina:
 
 -Startup.cs
+
 -appsettings.json
  
 En appsettings.json modificar el connectionstring ya que actualmente apunta a mi bd local, apuntalo a la tuya (recuerda que estamos usando sql server)
