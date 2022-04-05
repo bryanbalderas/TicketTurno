@@ -7,6 +7,8 @@ Pasos a tomar en cuenta:
 -Startup.cs
 
 -appsettings.json
+
+Antes de realizar cualquier cosa elimina los archivos en la carpeta Migrations y despues sigue los pasos a continuacion
  
 En appsettings.json modificar el connectionstring ya que actualmente apunta a mi bd local, apuntalo a la tuya (recuerda que estamos usando sql server)
 
