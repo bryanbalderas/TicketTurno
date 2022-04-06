@@ -19,10 +19,30 @@ namespace TicketParcial.Controllers
             _context = context;
         }
 
+
+
         // GET: TicketTurnoModels
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, int ticket)
         {
-            return View(await _context.TicketTurnoList.ToListAsync());
+            var tickets = from m in _context.TicketTurnoList
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString) && ticket!=0)
+            {
+                tickets = tickets.Where(s => s.curp!.Equals(searchString));
+
+                tickets = tickets.Where(s => s.ID!.Equals(ticket));
+            }
+            else
+            {
+                List<TicketTurnoModel> lista;
+                lista = new List<TicketTurnoModel>();
+                return View(lista);
+            }
+
+            return View(await tickets.ToListAsync());
+
+            //return View(await _context.TicketTurnoList.ToListAsync());
         }
 
         // GET: TicketTurnoModels/Details/5
