@@ -482,3 +482,4 @@ C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\Tick
 C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\TicketParcial.pdb
 C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\TicketParcial.genruntimeconfig.cache
 C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\TicketParcial.csproj.AssemblyReference.cache
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_SignupLayout.cshtml.g.cs

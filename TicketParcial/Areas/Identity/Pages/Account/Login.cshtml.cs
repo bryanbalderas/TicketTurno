@@ -47,16 +47,17 @@ namespace TicketParcial.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "El campo email es requerido.")]
+            [EmailAddress(ErrorMessage = "El campo email no cuenta con un email válido.")]
+            [DataType(DataType.EmailAddress)]
+            [Display(Name = "Email", Prompt = "Ingresa tu email")]
             public string Email { get; set; }
-
-            [Required]
+            [Required(ErrorMessage = "El campo contraseña es requerido.")]
             [DataType(DataType.Password)]
-            [Display(Name = "Contraseña")]
+            [Display(Name = "Contraseña", Prompt = "Ingresa tu contraseña")]
             public string Password { get; set; }
 
-            [Display(Name = "Recordarme?")]
+            [Display(Name = "Recordarme")]
             public bool RememberMe { get; set; }
         }
 

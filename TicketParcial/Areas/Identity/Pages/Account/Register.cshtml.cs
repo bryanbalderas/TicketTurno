@@ -69,7 +69,7 @@ namespace TicketParcial.Areas.Identity.Pages.Account
             [Required(ErrorMessage = "El campo contraseña es requerido.")]
             [StringLength(100, ErrorMessage = "La contraseña debe contener al menos {2} caracteres y máximo {1}.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Contraseña", Prompt = "Ingresa tu contraseña.")]
+            [Display(Name = "Contraseña", Prompt = "Ingresa tu contraseña")]
             public string Password { get; set; }
 
             [Required(ErrorMessage = "El campo confirmar contraseña es requerido.")]
