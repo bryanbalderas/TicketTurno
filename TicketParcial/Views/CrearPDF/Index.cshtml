@@ -1,11 +1,9 @@
 ﻿@model TicketParcial.Models.TicketTurnoModel
 
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Crear PDF";
     Layout = null;
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,74 +14,82 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <div class= "card   border-danger mb-3 ">
-        <h1 class="card-title text-center" >Información a detalle por Ticket</h1>
-        <div class="card-body">
-            <h3  class="card-text text-left">
-                @Html.DisplayNameFor(model => model.ID) ticket
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.ID)
-            </h5><br />
-
-            <h3  class="card-text text-left">
-                Nombre Completo de quien realiza el ticket: 
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.nombreRealiza)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Curp:
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.curp)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Nombre(s):
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.nombre)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Apellido paterno:
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.paterno)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Apellido materno:
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.materno)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Telefono:
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.telefono)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Celular:
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.celular)
-            </h5><br />
-            <h3  class="card-text text-left">
-                Correo electronico:
-            </h3>
-            <h5  class="card-text">
-                @Html.DisplayFor(model => model.correo)
-            </h5>
-
-            
-
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h3 class="card-title text-center font-weight-bold">Comprobante del ticket</h3>
+        </div>
+        <div class="card-body p-4">
+            <div class="row mb-5 mt-3">
+                <div class="col-12 d-flex justify-content-end text-right">
+                    <h3 class="font-weight-bold">
+                        Ticket @Html.DisplayNameFor(model => model.ID): #@Html.DisplayFor(model => model.ID)
+                    </h3>
+                    <h5 class="font-weight-bold">
+                        @Html.DisplayNameFor(model => model.nombreRealiza):
+                        <span class="font-weight-light">
+                            @Html.DisplayFor(model => model.nombreRealiza)
+                        </span>
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.curp)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.nombre)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.paterno)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.materno)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.telefono)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.celular)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.correo)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.curp)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.nombre)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.paterno)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.materno)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.telefono)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.celular)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.correo)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-
-
-
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

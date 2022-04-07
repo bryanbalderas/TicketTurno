@@ -964,3 +964,7 @@ C:\Users\Administrador\Documents\desa\TicketTurno\TicketParcial\obj\Debug\netcor
 C:\Users\Administrador\Documents\desa\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\TicketParcial.dll
 C:\Users\Administrador\Documents\desa\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\TicketParcial.pdb
 C:\Users\Administrador\Documents\desa\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\TicketParcial.genruntimeconfig.cache
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Rotativa.AspNetCore.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\Razor\Views\CrearPDF\Index.cshtml.g.cs
