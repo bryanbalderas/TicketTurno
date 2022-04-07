@@ -65,7 +65,7 @@ namespace TicketParcial.Areas.Identity.Pages.Account
         {
             if (User.Identity.IsAuthenticated)
             {
-                Response.Redirect("/Administrator/Admin");
+                Response.Redirect("/TicketTurno/Listadmin");
             }
 
             if (!string.IsNullOrEmpty(ErrorMessage))
@@ -98,7 +98,7 @@ namespace TicketParcial.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    Response.Redirect("/Administrator/Admin");
+                    Response.Redirect("/TicketTurno/Listadmin");
                 }
                 if (result.RequiresTwoFactor)
                 {
