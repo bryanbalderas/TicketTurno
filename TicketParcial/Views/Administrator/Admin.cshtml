@@ -4,5 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Admin</h1>
+<h1>Panel Administrativo</h1>
 
+<p>Que deseas hacer?</p>
+
+<a asp-controller="TicketTurno" asp-action="Listadmin"><button class="btn btn-primary">Modificar registros de tickets</button></a>
+<hr />
+<a asp-controller="Municipio" asp-action="Index"><button class="btn btn-primary">Agregar o modificar municipios</button></a>
+<hr />
+<a asp-controller="NivelModels" asp-action="Index"><button class="btn btn-primary">Agregar o modificar niveles</button></a>
+<hr />
+<a asp-controller="Asunto" asp-action="Index"><button class="btn btn-primary">Agregar o modificar asuntos</button></a>

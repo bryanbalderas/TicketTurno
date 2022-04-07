@@ -185,5 +185,42 @@ namespace TicketParcial.Controllers
         {
             return _context.TicketTurnoList.Any(e => e.ID == id);
         }
+
+        public async Task<IActionResult> Listadmin(string searchString, string nombreFiltro)
+        {
+            var tickets = from m in _context.TicketTurnoList
+                          select m;
+
+            if (!String.IsNullOrEmpty(searchString) || !String.IsNullOrEmpty(nombreFiltro))
+            {
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    tickets = tickets.Where(s => s.curp!.Contains(searchString));
+                }else if (!String.IsNullOrEmpty(nombreFiltro))
+                {
+                    string[] name = nombreFiltro.Split(" ");
+                    tickets = tickets.Where(s => s.nombre!.Contains(name[0]));
+                    if(name.Length == 2)
+                    {
+                        tickets = tickets.Where(s => s.paterno!.Contains(name[1]));
+
+                        if(name.Length == 3)
+                        {
+                            tickets = tickets.Where(s => s.paterno!.Contains(name[2]));
+                        }
+                    }
+                }
+                
+        
+                
+            }
+
+            return View(await tickets.ToListAsync());
+
+            //return View(await _context.TicketTurnoList.ToListAsync());
+        }
+
+
+
     }
 }

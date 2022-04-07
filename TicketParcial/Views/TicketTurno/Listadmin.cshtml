@@ -1,0 +1,87 @@
+﻿@model IEnumerable<TicketParcial.Models.TicketTurnoModel>
+
+@{
+    ViewData["Title"] = "Listadmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Vista de administrador</h1>
+
+<h1>Buscar Ticket</h1>
+<form asp-controller="TicketTurno" asp-action="Listadmin" method="get">
+    <p>
+        CURP: <input type="text" name="SearchString" />
+    </p>
+    <p>
+        Nombre: <input type="text" name="nombreFiltro" />
+        <input type="submit" value="Enviar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreRealiza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.materno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreRealiza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.curp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.paterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.materno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Modificar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
