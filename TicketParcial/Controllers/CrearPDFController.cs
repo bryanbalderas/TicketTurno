@@ -33,14 +33,11 @@ namespace TicketParcial.Controllers
             {
                 return NotFound();
             }
-
             return new ViewAsPdf("Index", ticketModel)
             {
                 PageSize = Rotativa.AspNetCore.Options.Size.Letter,
                 PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
             };
-
-           
         }
     }
 }

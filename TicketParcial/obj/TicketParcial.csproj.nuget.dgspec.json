@@ -80,9 +80,17 @@
               "target": "Package",
               "version": "[3.1.5, )"
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
+            "Rotativa": {
+              "target": "Package",
+              "version": "[1.7.3, )"
+            },
             "Rotativa.AspNetCore": {
               "target": "Package",
-              "version": "[1.2.0-beta, )"
+              "version": "[1.2.0, )"
             }
           },
           "imports": [

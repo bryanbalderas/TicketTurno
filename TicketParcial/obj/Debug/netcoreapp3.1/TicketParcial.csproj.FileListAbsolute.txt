@@ -968,3 +968,17 @@ C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Micr
 C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Rotativa.AspNetCore.dll
 C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\obj\Debug\netcoreapp3.1\Razor\Views\CrearPDF\Index.cshtml.g.cs
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\QRCoder.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\Rotativa.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\VoN\source\Repos\TicketTurno\TicketParcial\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
