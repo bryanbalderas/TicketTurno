@@ -18,15 +18,15 @@
         return false;
     }
 
-    if (!validateCurp(curp)) {
-        handleError("Ingresa una CURP válida para continuar.");
-        return false;
-    }
+    //if (!validateCurp(curp)) {
+    //    handleError("Ingresa una CURP válida para continuar.");
+    //    return false;
+    //}
 
-    if (!validateAge(curp)) {
-        handleError("Tu fecha de nacimiento no está en el rango permitido de 3 a 15 años para los diferentes tipos de trámite, te recomendamos acudir personalmente a la oficina correspondiente.");
-        return false;
-    }
+    //if (!validateAge(curp)) {
+    //    handleError("Tu fecha de nacimiento no está en el rango permitido de 3 a 15 años para los diferentes tipos de trámite, te recomendamos acudir personalmente a la oficina correspondiente.");
+    //    return false;
+    //}
 
     if (!validateInput(name, 3)) {
         handleError("Ingresa un nombre válido para continuar.");
@@ -53,20 +53,20 @@
         return false;
     }
 
-    if (!validateSelect(educationLevel)) {
-        handleError("Selecciona un nivel acádemico para continuar.");
-        return false;
-    }
+    //if (!validateSelect(educationLevel)) {
+    //    handleError("Selecciona un nivel acádemico para continuar.");
+    //    return false;
+    //}
 
-    if (!validateSelect(town)) {
-        handleError("Selecciona un municipio para continuar.");
-        return false;
-    }
+    //if (!validateSelect(town)) {
+    //    handleError("Selecciona un municipio para continuar.");
+    //    return false;
+    //}
 
-    if (!validateSelect(subject)) {
-        handleError("Selecciona un asunto para continuar.");
-        return false;
-    }
+    //if (!validateSelect(subject)) {
+    //    handleError("Selecciona un asunto para continuar.");
+    //    return false;
+    //}
     
     document.querySelector("#ticket-form").submit();
 

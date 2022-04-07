@@ -118,7 +118,7 @@ namespace TicketParcial.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,nombreRealiza,curp,nombre,paterno,materno,telefono,celular,correo")] TicketTurnoModel ticketTurnoModel)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,nombreRealiza,curp,nombre,paterno,materno,telefono,celular,correo,asuntoID,municipioID,nivelID")] TicketTurnoModel ticketTurnoModel)
         {
             if (id != ticketTurnoModel.ID)
             {

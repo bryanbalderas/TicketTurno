@@ -10771,26 +10771,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\VoN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\bryan\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
+      "projectUniqueName": "C:\\Users\\bryan\\Desktop\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
       "projectName": "TicketParcial",
-      "projectPath": "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
-      "packagesPath": "C:\\Users\\VoN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\obj\\",
+      "projectPath": "C:\\Users\\bryan\\Desktop\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
+      "packagesPath": "C:\\Users\\bryan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bryan\\Desktop\\TicketTurno\\TicketParcial\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\VoN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -10803,7 +10802,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -10815,7 +10813,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "DNTCaptcha.Core": {
             "target": "Package",
@@ -10882,7 +10879,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   },
