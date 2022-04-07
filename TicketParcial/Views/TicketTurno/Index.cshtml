@@ -39,66 +39,72 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.nombreRealiza)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.curp)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.nombre)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.paterno)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.materno)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.telefono)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.celular)
                         </th>
-                        <th>
+                        <th class="text-center align-middle">
                             @Html.DisplayNameFor(model => model.correo)
                         </th>
-                        <th>Acciones</th>
+                        <th class="text-center align-middle">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombreRealiza)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.curp)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.paterno)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.materno)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.telefono)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.celular)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.correo)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.ID">Modificar</a> |
-                                <a asp-action="Details" asp-route-id="@item.ID">Detalles</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.nombreRealiza)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.curp)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.paterno)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.materno)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.telefono)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.celular)
+                        </td>
+                        <td class="text-center align-middle">
+                            @Html.DisplayFor(modelItem => item.correo)
+                        </td>
+                        <td class="text-center align-middle">
+                            <div class="btn-group" role="group">
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-warning text-white">
+                                    <i class="bi bi-pencil mr-1"></i>
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary">
+                                    <i class="bi bi-eye mr-1"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>
