@@ -132,3 +132,78 @@ const confirmDelete = (e) => {
         }
     })
 }
+
+const validateLogin = (e) => {
+
+    e.preventDefault();
+
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+
+    if (!validateInput(email, 1)) {
+        handleError("Ingresa un correo para continuar.");
+        return false;
+    }
+
+    if (!validateEmail(email)) {
+        handleError("Ingresa un correo válido para continuar.");
+        return false;
+    }
+
+    if (!validateInput(password, 1)) {
+        handleError("Ingresa una contraseña para continuar.");
+        return false;
+    }
+
+    document.querySelector("#account").submit();
+
+};
+
+const validateSignup = (e) => {
+
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre');
+    const apellido = document.getElementById('apellido');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const repeat_password = document.getElementById('repeat-password');
+
+    if (!validateInput(nombre, 3)) {
+        handleError("Ingresa un nombre válido para continuar.");
+        return false;
+    }
+
+    if (!validateInput(apellido, 3)) {
+        handleError("Ingresa un apellido válido para continuar.");
+        return false;
+
+    }
+    if (!validateInput(email, 1)) {
+        handleError("Ingresa un correo para continuar.");
+        return false;
+    }
+
+    if (!validateEmail(email)) {
+        handleError("Ingresa un correo válido para continuar.");
+        return false;
+    }
+
+    if (!validateInput(password, 6)) {
+        handleError("Ingresa una contraseña de al menos 6 caracteres y máximo 100 para continuar.");
+        return false;
+    }
+
+    if (!validateInput(repeat_password, 6)) {
+        handleError("Ingresa una contraseña de al menos 6 caracteres y máximo 100 para continuar.");
+        return false;
+    }
+
+    if (password.value.trim() != repeat_password.value.trim()) {
+        handleError("Las contraseñas no coinciden.");
+        return false;
+    }
+
+    document.querySelector("#signup-form").submit();
+
+};
