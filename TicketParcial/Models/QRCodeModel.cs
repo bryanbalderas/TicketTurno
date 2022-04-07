@@ -4,6 +4,11 @@ namespace TicketParcial.Models
 {
     public class QRCodeModel
     {
-        public string QRCodeText { get; set; }
+        public string QRCodeURI { get; set; }
+
+        public QRCodeModel(string qrCodeURI)
+        {
+            QRCodeURI = qrCodeURI;
+        }
     }
 }

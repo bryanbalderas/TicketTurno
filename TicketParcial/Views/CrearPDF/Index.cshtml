@@ -1,4 +1,4 @@
-﻿@model TicketParcial.Models.TicketTurnoModel
+﻿@model TicketParcial.Models.PDFModel
 
 @{
     ViewData["Title"] = "Crear PDF";
@@ -20,16 +20,19 @@
         </div>
         <div class="card-body p-4">
             <div class="row mb-5 mt-3">
-                <div class="col-12 d-flex justify-content-end text-right">
-                    <h3 class="font-weight-bold">
-                        Ticket @Html.DisplayNameFor(model => model.ID): #@Html.DisplayFor(model => model.ID)
-                    </h3>
-                    <h5 class="font-weight-bold">
-                        @Html.DisplayNameFor(model => model.nombreRealiza):
-                        <span class="font-weight-light">
-                            @Html.DisplayFor(model => model.nombreRealiza)
-                        </span>
-                    </h5>
+                <div class="col-12">
+                    <img src="@Html.DisplayFor(model => model.QRCodeModel.QRCodeURI)" class="img-fluid border" width="120" height="120" />
+                    <div class="col-12 text-right">
+                        <h3 class="font-weight-bold">
+                            Ticket @Html.DisplayNameFor(model => model.TicketTurnoModel.ID): #@Html.DisplayFor(model => model.TicketTurnoModel.ID)
+                        </h3>
+                        <h5 class="font-weight-bold">
+                            @Html.DisplayNameFor(model => model.TicketTurnoModel.nombreRealiza):
+                            <span class="font-weight-light">
+                                @Html.DisplayFor(model => model.TicketTurnoModel.nombreRealiza)
+                            </span>
+                        </h5>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -38,50 +41,50 @@
                         <thead>
                             <tr>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.curp)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.curp)
                                 </th>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.nombre)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.nombre)
                                 </th>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.paterno)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.paterno)
                                 </th>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.materno)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.materno)
                                 </th>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.telefono)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.telefono)
                                 </th>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.celular)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.celular)
                                 </th>
                                 <th class="text-center align-middle">
-                                    @Html.DisplayNameFor(model => model.correo)
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.correo)
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.curp)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.curp)
                                 </td>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.nombre)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.nombre)
                                 </td>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.paterno)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.paterno)
                                 </td>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.materno)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.materno)
                                 </td>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.telefono)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.telefono)
                                 </td>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.celular)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.celular)
                                 </td>
                                 <td class="text-center align-middle">
-                                    @Html.DisplayFor(model => model.correo)
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.correo)
                                 </td>
                             </tr>
                         </tbody>
