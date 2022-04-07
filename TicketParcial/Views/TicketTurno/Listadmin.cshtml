@@ -105,8 +105,8 @@
                                     <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">
                                         <i class="bi bi-trash mr-1"></i>
                                     </a>
-                                    <a asp-controller="CrearPDF" asp-action="Index" asp-route-id="@item.ID" class="btn btn-success">
-                                        <i class="bi bi-archive mr-1"></i>
+                                    <a target="_blank" asp-controller="CrearPDF" asp-action="Index" asp-route-id="@item.ID" class="btn btn-success" style="background-color: rebeccapurple; border: 1px solid rebeccapurple;">
+                                        <i class="bi bi-file-earmark-medical-fill"></i>
                                     </a>
                                 </div>
                             </td>

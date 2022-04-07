@@ -27,7 +27,7 @@
                             Ticket @Html.DisplayNameFor(model => model.TicketTurnoModel.ID): #@Html.DisplayFor(model => model.TicketTurnoModel.ID)
                         </h3>
                         <h3 class="font-weight-bold">
-                            Turno Municipio @Html.DisplayNameFor(model => model.TicketTurnoModel.munTickID): #@Html.DisplayFor(model => model.TicketTurnoModel.munTickID)
+                            Turno por municipio: #@Html.DisplayFor(model => model.TicketTurnoModel.munTickID)
                         </h3>
                         <h5 class="font-weight-bold">
                             @Html.DisplayNameFor(model => model.TicketTurnoModel.nombreRealiza):
@@ -64,6 +64,15 @@
                                 <th class="text-center align-middle">
                                     @Html.DisplayNameFor(model => model.TicketTurnoModel.correo)
                                 </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.asunto.descripcion)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.municipio.descripcion)
+                                </th>
+                                <th class="text-center align-middle">
+                                    @Html.DisplayNameFor(model => model.TicketTurnoModel.nivel.descripcion)
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,6 +97,15 @@
                                 </td>
                                 <td class="text-center align-middle">
                                     @Html.DisplayFor(model => model.TicketTurnoModel.correo)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.asunto.descripcion)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.municipio.descripcion)
+                                </td>
+                                <td class="text-center align-middle">
+                                    @Html.DisplayFor(model => model.TicketTurnoModel.nivel.descripcion)
                                 </td>
                             </tr>
                         </tbody>

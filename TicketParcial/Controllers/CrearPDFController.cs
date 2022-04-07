@@ -8,6 +8,7 @@ using TicketParcial.Models;
 using QRCoder;
 using System.Drawing;
 using System.Diagnostics;
+using System.Linq;
 
 namespace TicketParcial.Controllers
 {
@@ -35,6 +36,34 @@ namespace TicketParcial.Controllers
             {
                 return NotFound();
             }
+
+            var munic = from m in _context.MunicipiosList
+                        select m;
+
+            var asun = from m in _context.AsuntosList
+                        select m;
+
+            var niv = from m in _context.NivelesList
+                        select m;
+
+            var municip = munic.Where(s => s.ID!.Equals(ticketModel.municipioID)).ToList();
+
+            var sunt = asun.Where(s => s.ID!.Equals(ticketModel.asuntoID)).ToList();
+
+            var nive = niv.Where(s => s.ID!.Equals(ticketModel.nivelID)).ToList();
+
+            AsuntoModel nasun = sunt[0];
+
+            NivelModel nnivel = nive[0];
+
+            MunicipioModel nmun = municip[0];
+
+            ticketModel.municipio.descripcion = nmun.descripcion;
+
+            ticketModel.nivel.descripcion = nnivel.descripcion;
+
+            ticketModel.asunto.descripcion = nasun.descripcion;
+
 
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeInfo = qrGenerator.CreateQrCode(ticketModel.curp, QRCodeGenerator.ECCLevel.Q);
