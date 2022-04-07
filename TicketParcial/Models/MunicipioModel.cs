@@ -11,7 +11,8 @@ namespace TicketParcial.Models
 
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El campo municipio es requerido.")]
+        [Display(Name = "Municipio", Prompt = "Ingresa un municipio")]
         public string descripcion { get; set; }
 
 

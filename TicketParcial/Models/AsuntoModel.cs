@@ -11,7 +11,8 @@ namespace TicketParcial.Models
 
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El campo asunto es requerido.")]
+        [Display(Name = "Asunto", Prompt = "Ingresa un asunto")]
         public string descripcion { get; set; }
 
         public List<TicketTurnoModel> ticketList { get; set; }
