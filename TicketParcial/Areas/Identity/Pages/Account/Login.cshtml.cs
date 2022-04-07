@@ -53,7 +53,7 @@ namespace TicketParcial.Areas.Identity.Pages.Account
             [Display(Name = "Email", Prompt = "Ingresa tu email")]
             public string Email { get; set; }
             [Required(ErrorMessage = "El campo contraseña es requerido.")]
-            [DataType(DataType.Password)]
+            [DataType(DataType.Password)]   
             [Display(Name = "Contraseña", Prompt = "Ingresa tu contraseña")]
             public string Password { get; set; }
 

@@ -1,108 +1,103 @@
 ﻿@model TicketParcial.Models.TicketTurnoModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Registrar ticket de turno";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row border d-flex justify-content-between">
-    <div class="col-md-4">
-        <img src="https://i.ibb.co/ng0TB8m/izquierda-Sup.png" alt="izquierda-Sup" border="0" width="60px" height="60px">
-    </div>
-    <div class="col-md-4">
-        <h1>Ticket Turno</h1>
-    </div>
-    <div class="col-md-4 ml-auto">
-        <img src="https://i.ibb.co/4Vv3WF2/derecha-Sup.png" alt="derecha-Sup" border="0" width="60px" height="60px">
+<div class="row d-flex justify-content-around">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header d-flex justify-content-around align-items-center">
+                <img src="https://i.ibb.co/ng0TB8m/izquierda-Sup.png" class="rounded" alt="izquierda-Sup" border="0" width="60" height="60">
+                <h4 class="font-weight-bold">Ticket turno</h4>
+                <img src="https://i.ibb.co/4Vv3WF2/derecha-Sup.png" alt="derecha-Sup" border="0" width="60" height="60">
+            </div>
+            <div class="card-content p-4">
+                <form asp-action="Create" name="crearTicket" onsubmit="return validaciones()">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="col-md-6 form-group">
+                            <label asp-for="nombreRealiza" class="control-label">Nombre de quien tramita</label>
+                            <input asp-for="nombreRealiza" name="nombreRealiza" id="nombreRealiza" class="form-control" />
+                            <span asp-validation-for="nombreRealiza" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label asp-for="curp" class="control-label">CURP</label>
+                            <input asp-for="curp" name="curp" id="curp" class="form-control" />
+                            <span asp-validation-for="curp" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <label asp-for="nombre" class="control-label">Nombre</label>
+                            <input asp-for="nombre" name="nombre" id="nombre" class="form-control" />
+                            <span asp-validation-for="nombre" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label asp-for="paterno" class="control-label">Paterno</label>
+                            <input asp-for="paterno" name="paterno" id="paterno" class="form-control" />
+                            <span asp-validation-for="paterno" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label asp-for="materno" class="control-label">Materno</label>
+                            <input asp-for="materno" class="form-control" />
+                            <span asp-validation-for="materno" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="telefono" class="control-label">Telefono</label>
+                        <input asp-for="telefono" name="telefono" id="telefono" class="form-control" />
+                        <span asp-validation-for="telefono" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="celular" class="control-label">Celular</label>
+                        <input asp-for="celular" name="celular" id="celular" class="form-control" />
+                        <span asp-validation-for="celular" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="correo" class="control-label">Correo</label>
+                        <input asp-for="correo" name="correo" id="correo" class="form-control" type="email" />
+                        <span asp-validation-for="correo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="municipio" class="control-label">Municipio</label>
+                        <select asp-for="municipio" name="municipio" id="municipio" class="form-control" asp-items="ViewBag.municipioID"></select>
+                        <span asp-validation-for="municipio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="asunto" class="control-label">Asunto</label>
+                        <select asp-for="asunto" name="asunto" id="asunto" class="form-control" asp-items="ViewBag.asuntoID"></select>
+                        <span asp-validation-for="asunto" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="nivel" class="control-label">¿Nivel al que desea ingresar o que ya cursa el alumno?</label>
+                        <select asp-for="nivel" name="nivel" id="nivel" class="form-control" asp-items="ViewBag.nivelID"></select>
+                        <span asp-validation-for="nivel" class="text-danger"></span>
+                    </div>
+                    <div class="form-group d-flex justify-content-center mt-5 mb-5">
+                        <input type="submit" value="Generar turno" class="btn btn-primary" />
+                    </div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="row d-flex justify-content-around align-items-center">
+                        <ul>
+                            <li>Se requiere un mecanismo de autenticación del documento.</li>
+                            <li>Se requiere indicar el número de turno.</li>
+                            <li>Se requiere control por oficina regional.</li>
+                            <li>Se requiere parametrizar la atención por días.</li>
+                            <li>Se requiere generar comprobante pdf al usuario.</li>
+                            <li>Se contempla que la mayoría de usuarios usan móvil.</li>
+                        </ul>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/EAN13.svg" width="230" height="180" />
+                        <img src="https://latam.kaspersky.com/content/es-mx/images/repository/isc/2020/9910/a-guide-to-qr-codes-and-how-to-scan-qr-codes-2.png" width="200px" height="200px" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
 
-<hr />
-    <div class="row border d-flex justify-content-around">
-        <form asp-action="Create" name="crearTicket" onsubmit="return validaciones()">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label asp-for="nombreRealiza" class="control-label">Nombre de quien tramita:</label>
-                    <input asp-for="nombreRealiza" name="nombreRealiza" id="nombreRealiza" class="form-control" />
-                    <span asp-validation-for="nombreRealiza" class="text-danger"></span>
-                </div>
-                <div class="col-md-6">
-                    <label asp-for="curp" class="control-label">CURP:</label>
-                    <input asp-for="curp" name="curp" id="curp" class="form-control" />
-                    <span asp-validation-for="curp" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <label asp-for="nombre" class="control-label">Nombre:</label>
-                    <input asp-for="nombre" name="nombre" id="nombre" class="form-control" />
-                    <span asp-validation-for="nombre" class="text-danger"></span>
-                </div>
-                <div class="col-md-4">
-                    <label asp-for="paterno" class="control-label">Paterno:</label>
-                    <input asp-for="paterno" name="paterno" id="paterno" class="form-control" />
-                    <span asp-validation-for="paterno" class="text-danger"></span>
-                </div>
-                <div class="col-md-4">
-                    <label asp-for="materno" class="control-label">Materno:</label>
-                    <input asp-for="materno" class="form-control" />
-                    <span asp-validation-for="materno" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefono" class="control-label">Telefono:</label>
-                <input asp-for="telefono" name="telefono" id="telefono" class="form-control" />
-                <span asp-validation-for="telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="celular" class="control-label">Celular:</label>
-                <input asp-for="celular" name="celular" id="celular" class="form-control" />
-                <span asp-validation-for="celular" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="correo" class="control-label">Correo:</label>
-                <input asp-for="correo" name="correo" id="correo" class="form-control" type="email" />
-                <span asp-validation-for="correo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="municipio" class="control-label">Municipio</label>
-                <select asp-for="municipio" name="municipio" id="municipio" class="form-control" asp-items="ViewBag.municipioID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="asunto" class="control-label">Asunto:</label>
-                <select asp-for="asunto" name="asunto" id="asunto" class="form-control" asp-items="ViewBag.asuntoID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="nivel" class="control-label">¿Nivel al que desea ingresar o que ya cursa el alumno?:</label>
-                <select asp-for="nivel" name="nivel" id="nivel" class="form-control" asp-items="ViewBag.nivelID"></select>
-            </div>
-            <div class="form-group d-flex justify-content-center">
-                <input type="submit" value="Generar Turno" class="btn btn-primary" />
-            </div>
-
-            <div class="row">
-                <div class="col-md-5">
-                    
-                    <p>Se requiere un mecanismo de autenticación del documento</p>
-                    <p>Se requiere indicar el número de turno</p>
-                    <p>Se requiere control por oficina regional</p>
-                    <p>Se requiere parametrizar la antención por dias</p>
-                    <p>Se requiere generar comprobante pdf al usuario</p>
-                    <p>Se contempla que la mayoría de usuarios usan movil</p>
-                </div>
-                <div class="col-md-5 ml-2 d-flex">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/EAN13.svg" width="250px" height="200px" />
-                    <img src="https://latam.kaspersky.com/content/es-mx/images/repository/isc/2020/9910/a-guide-to-qr-codes-and-how-to-scan-qr-codes-2.png" width="200px" height="200px" />
-
-                </div>
-            </div>
-        </form>
-        </div>
-    
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
