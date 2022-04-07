@@ -7,36 +7,13 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
+        <li class="nav-item d-flex justify-content-end justify-content-sm-start">
             <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
                 <i class="bi bi-person mr-1"></i>
                 ¡Bienvenido @UserManager.GetUserName(User)!
             </a>
         </li>
-        <li class="nav-item">
-            <div class="dropdown">
-                <button class="btn bg-transparent dropdown-toggle" type="button" id="dropdown-ticket-turno" data-toggle="dropdown" aria-expanded="false">
-                    Catálogos
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown-ticket-turno">
-                    <a class="nav-link text-dark d-flex align-items-center" asp-area="" asp-controller="Municipio" asp-action="Index">
-                        <i class="bi bi-house ml-2 mr-1"></i>
-                        Municipios
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="nav-link text-dark d-flex align-items-center" asp-area="" asp-controller="NivelModels" asp-action="Index">
-                        <i class="bi bi-card-heading ml-2 mr-1"></i>
-                        Niveles
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="nav-link text-dark d-flex align-items-center" asp-area="" asp-controller="Asunto" asp-action="Index">
-                        <i class="bi bi-envelope ml-2 mr-1"></i>
-                        Asuntos
-                    </a>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item">
+        <li class="nav-item d-flex justify-content-end justify-content-sm-start">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Create", "TicketTurno", new { area = "" })">
                 <button id="logout" type="submit" class="nav-link btn btn-link text-dark">
                     <i class="bi bi-box-arrow-right mr-1"></i>
@@ -47,10 +24,10 @@
     }
     else
     {
-        <li class="nav-item">
+        <li class="nav-item d-flex justify-content-end justify-content-sm-start">
             <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-flex justify-content-end justify-content-sm-start">
             <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
         </li>
     }
