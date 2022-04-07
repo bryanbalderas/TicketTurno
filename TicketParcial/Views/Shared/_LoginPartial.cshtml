@@ -14,10 +14,27 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="Admin">
-                <i class="bi bi-calendar mr-1"></i>
-                Administración
-            </a>
+            <div class="dropdown">
+                <button class="btn bg-transparent dropdown-toggle" type="button" id="dropdown-ticket-turno" data-toggle="dropdown" aria-expanded="false">
+                    Catálogos
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdown-ticket-turno">
+                    <a class="nav-link text-dark d-flex align-items-center" asp-area="" asp-controller="Municipio" asp-action="Index">
+                        <i class="bi bi-house ml-2 mr-1"></i>
+                        Municipios
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="nav-link text-dark d-flex align-items-center" asp-area="" asp-controller="NivelModels" asp-action="Index">
+                        <i class="bi bi-card-heading ml-2 mr-1"></i>
+                        Niveles
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="nav-link text-dark d-flex align-items-center" asp-area="" asp-controller="Asunto" asp-action="Index">
+                        <i class="bi bi-envelope ml-2 mr-1"></i>
+                        Asuntos
+                    </a>
+                </div>
+            </div>
         </li>
         <li class="nav-item">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Create", "TicketTurno", new { area = "" })">
