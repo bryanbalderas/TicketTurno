@@ -18,12 +18,18 @@
                     <thead>
                         <tr>
                             <th class="text-center align-middle">
+                                @Html.DisplayNameFor(model => model.ID)
+                            </th>
+                            <th class="text-center align-middle">
                                 Nivel
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td class="text-center align-middle">
+                                @Html.DisplayFor(model => model.ID)
+                            </td>
                             <td class="text-center align-middle">
                                 @Html.DisplayFor(model => model.descripcion)
                             </td>

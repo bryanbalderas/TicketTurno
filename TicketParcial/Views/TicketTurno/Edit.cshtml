@@ -1,14 +1,30 @@
-﻿@model TicketParcial.Models.TicketTurnoModel
+﻿@using Microsoft.AspNetCore.Identity
+@using TicketParcial.Areas.Identity.Data
+
+@inject SignInManager<TicketParcialUser> SignInManager
+@inject UserManager<TicketParcialUser> UserManager
+
+@model TicketParcial.Models.TicketTurnoModel
 
 @{
     ViewData["Title"] = "Actualizar ticket";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<a type="button" asp-action="Index" class="btn btn-secondary mb-5">
-    <i class="bi bi-arrow-return-left mr-1"></i>
-    Regresar
-</a>
+@if (SignInManager.IsSignedIn(User))
+{
+    <a type="button" asp-action="Listadmin" class="btn btn-secondary mb-5">
+        <i class="bi bi-arrow-return-left mr-1"></i>
+        Regresar
+    </a>
+}
+else
+{
+    <a type="button" asp-action="Index" class="btn btn-secondary mb-5">
+        <i class="bi bi-arrow-return-left mr-1"></i>
+        Regresar
+    </a>
+}
 
 <div class="row d-flex justify-content-around">
     <div class="col-12">
