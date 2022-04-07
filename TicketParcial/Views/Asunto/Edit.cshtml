@@ -19,7 +19,7 @@
                 </h6>
             </div>
             <div class="card-content p-4">
-                <form asp-action="Edit">
+                <form asp-action="Edit" id="subject-form" onsubmit="return validateSubjectForm(event);">
                     <input type="hidden" asp-for="ID" />
                     <div class="form-group">
                         <label asp-for="descripcion" class="control-label"></label>

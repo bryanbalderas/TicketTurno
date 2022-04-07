@@ -19,7 +19,7 @@
                 </h6>
             </div>
             <div class="card-content p-4">
-                <form asp-action="Create">
+                <form asp-action="Create" id="level-form" onsubmit="return validateLevelForm(event);">
                     <div class="form-group">
                         <label asp-for="descripcion" class="control-label"></label>
                         <input asp-for="descripcion" class="form-control" />

@@ -35,7 +35,7 @@ else
                 </h6>
             </div>
             <div class="card-content p-4">
-                <form asp-action="Edit">
+                <form asp-action="Edit" id="ticket-form" onsubmit="return validateTicketForm(event);">
                     <input type="hidden" asp-for="ID" />
                     <div class="form-row">
                         <div class="col-12 col-md-6 form-group">

@@ -43,7 +43,7 @@
 
 <div class="row mt-5">
     <div class="col-12 d-flex justify-content-around">
-        <form asp-action="Delete">
+        <form asp-action="Delete" id="form" onsubmit="return confirmDelete(event);">
             <input type="hidden" asp-for="ID" />
             <button type="submit" value="Eliminar" class="btn btn-danger">
                 <i class="bi bi-trash mr-1"></i>
