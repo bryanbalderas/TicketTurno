@@ -1,0 +1,89 @@
+﻿@model TicketParcial.Models.TicketTurnoModel
+
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class= "card   border-danger mb-3 ">
+        <h1 class="card-title text-center" >Información a detalle por Ticket</h1>
+        <div class="card-body">
+            <h3  class="card-text text-left">
+                @Html.DisplayNameFor(model => model.ID) ticket
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.ID)
+            </h5><br />
+
+            <h3  class="card-text text-left">
+                Nombre Completo de quien realiza el ticket: 
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.nombreRealiza)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Curp:
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.curp)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Nombre(s):
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.nombre)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Apellido paterno:
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.paterno)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Apellido materno:
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.materno)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Telefono:
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.telefono)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Celular:
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.celular)
+            </h5><br />
+            <h3  class="card-text text-left">
+                Correo electronico:
+            </h3>
+            <h5  class="card-text">
+                @Html.DisplayFor(model => model.correo)
+            </h5>
+
+            
+
+        </div>
+    </div>
+
+
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

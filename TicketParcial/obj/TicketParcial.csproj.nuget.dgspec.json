@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\TicketParcial.csproj": {}
+    "C:\\Users\\Administrador\\Documents\\desa\\TicketTurno\\TicketParcial\\TicketParcial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\TicketParcial.csproj": {
+    "C:\\Users\\Administrador\\Documents\\desa\\TicketTurno\\TicketParcial\\TicketParcial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
+        "projectUniqueName": "C:\\Users\\Administrador\\Documents\\desa\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
         "projectName": "TicketParcial",
-        "projectPath": "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
-        "packagesPath": "C:\\Users\\VoN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VoN\\source\\Repos\\TicketTurno\\TicketParcial\\obj\\",
+        "projectPath": "C:\\Users\\Administrador\\Documents\\desa\\TicketTurno\\TicketParcial\\TicketParcial.csproj",
+        "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Administrador\\Documents\\desa\\TicketTurno\\TicketParcial\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\VoN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,12 +26,12 @@
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -44,7 +43,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "DNTCaptcha.Core": {
               "target": "Package",
@@ -79,6 +77,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0-beta, )"
             }
           },
           "imports": [
@@ -91,6 +93,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -99,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

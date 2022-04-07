@@ -64,6 +64,8 @@ namespace TicketParcial
                     pattern: "{controller=TicketTurno}/{action=Create}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            Rotativa.AspNetCore.RotativaConfiguration.Setup(env.WebRootPath, "../Rotativa");
         }
     }
 }
