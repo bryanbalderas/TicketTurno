@@ -34,17 +34,15 @@ namespace TicketParcial.Models
         [Display(Name = "Materno", Prompt = "Ingresa el apellido materno")]
         public string materno { get; set; }
 
-        [Phone(ErrorMessage = "El campo teléfono no cuenta con un téléfono válido.")]
         [Required(ErrorMessage = "El campo teléfono es requerido.")]
-        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\d{10})$", ErrorMessage = "El campo teléfono no cuenta con un teléfono válido.")]
         [Display(Name = "Teléfono", Prompt = "Ingresa un teléfono")]
-        public int telefono { get; set; }
+        public string telefono { get; set; }
 
-        [Phone(ErrorMessage = "El campo celular no cuenta con un celular válido.")]
         [Required(ErrorMessage = "El campo celular es requerido.")]
-        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\d{10})$", ErrorMessage = "El campo celular no cuenta con un celular válido.")]
         [Display(Name = "Celular", Prompt = "Ingresa un celular")]
-        public int celular { get; set; }
+        public string celular { get; set; }
 
         [Required(ErrorMessage = "El campo email es requerido.")]
         [EmailAddress(ErrorMessage = "El campo email no cuenta con un email válido.")]
@@ -52,16 +50,10 @@ namespace TicketParcial.Models
         [Display(Name = "Email", Prompt = "Ingresa tu email")]
         public string correo { get; set; }
 
-        [Required(ErrorMessage = "El campo asunto es requerido.")]
-        [DataType(DataType.Text)]
         [Display(Name = "Asunto")]
         public AsuntoModel asunto { get; set; }
-        [Required(ErrorMessage = "El campo municipio es requerido.")]
-        [DataType(DataType.Text)]
         [Display(Name = "Municipio")]
         public MunicipioModel municipio { get; set; }
-        [Required(ErrorMessage = "El campo nivel acádemico es requerido.")]
-        [DataType(DataType.Text)]
         [Display(Name = "¿Nivel al que desea ingresar o que ya cursa el alumno?")]
         public NivelModel nivel { get; set; }
     }

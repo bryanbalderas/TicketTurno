@@ -17,29 +17,29 @@
                 <form asp-action="Create" name="crearTicket" onsubmit="return validaciones()">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-row">
-                        <div class="col-md-6 form-group">
+                        <div class="col-12 col-md-6 form-group">
                             <label asp-for="nombreRealiza" class="control-label">Nombre de quien tramita</label>
                             <input asp-for="nombreRealiza" name="nombreRealiza" id="nombreRealiza" class="form-control" />
                             <span asp-validation-for="nombreRealiza" class="text-danger"></span>
                         </div>
-                        <div class="col-md-6 form-group">
+                        <div class="col-12 col-md-6 form-group">
                             <label asp-for="curp" class="control-label">CURP</label>
                             <input asp-for="curp" name="curp" id="curp" class="form-control" />
                             <span asp-validation-for="curp" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-4 form-group">
+                        <div class="col-12 col-md-4 form-group">
                             <label asp-for="nombre" class="control-label">Nombre</label>
                             <input asp-for="nombre" name="nombre" id="nombre" class="form-control" />
                             <span asp-validation-for="nombre" class="text-danger"></span>
                         </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-12 col-md-4 form-group">
                             <label asp-for="paterno" class="control-label">Paterno</label>
                             <input asp-for="paterno" name="paterno" id="paterno" class="form-control" />
                             <span asp-validation-for="paterno" class="text-danger"></span>
                         </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-12 col-md-4 form-group">
                             <label asp-for="materno" class="control-label">Materno</label>
                             <input asp-for="materno" class="form-control" />
                             <span asp-validation-for="materno" class="text-danger"></span>
