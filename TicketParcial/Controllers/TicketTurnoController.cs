@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -212,7 +213,14 @@ namespace TicketParcial.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                if (User.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction(nameof(Listadmin));
+                }
+                else
+                {
+                    return RedirectToAction(nameof(Index));
+                }
             }
 
             ViewData["municipioID"] = new SelectList(_context.MunicipiosList, "ID", "descripcion", ticketTurnoModel.municipio);
@@ -222,6 +230,7 @@ namespace TicketParcial.Controllers
             return View(ticketTurnoModel);
         }
 
+        [Authorize]
         // GET: TicketTurnoModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -241,6 +250,7 @@ namespace TicketParcial.Controllers
         }
 
         // POST: TicketTurnoModels/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -256,6 +266,7 @@ namespace TicketParcial.Controllers
             return _context.TicketTurnoList.Any(e => e.ID == id);
         }
 
+        [Authorize]
         public async Task<IActionResult> Listadmin(string searchString, string nombreFiltro)
         {
             var tickets = from m in _context.TicketTurnoList

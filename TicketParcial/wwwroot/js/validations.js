@@ -155,6 +155,11 @@ const validateLogin = (e) => {
         return false;
     }
 
+    if (grecaptcha.getResponse() == "") {
+        handleError("Selecciona el captcha para poder continuar.");
+        return false;
+    }
+
     document.querySelector("#account").submit();
 
 };
@@ -201,6 +206,11 @@ const validateSignup = (e) => {
 
     if (password.value.trim() != repeat_password.value.trim()) {
         handleError("Las contraseñas no coinciden.");
+        return false;
+    }
+
+    if (grecaptcha.getResponse() == "") {
+        handleError("Selecciona el captcha para poder continuar.");
         return false;
     }
 
