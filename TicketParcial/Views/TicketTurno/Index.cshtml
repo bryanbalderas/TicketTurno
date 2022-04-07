@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<TicketParcial.Models.TicketTurnoModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Buscar ticket de turno";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Buscar Ticket</h1>
 <form asp-controller="TicketTurno" asp-action="Index" method="get">
     <p>
         CURP: <input type="text" name="SearchString" />
