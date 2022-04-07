@@ -50,30 +50,32 @@ namespace TicketParcial.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
+            [Required(ErrorMessage = "El campo email es requerido.")]
+            [EmailAddress(ErrorMessage = "El campo email no cuenta con un email válido.")]
+            [DataType(DataType.EmailAddress)]
+            [Display(Name = "Email", Prompt = "Ingresa tu email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "El campo nombre es requerido.")]
             [DataType(DataType.Text)]
-            [Display(Name = "Nombre")]
+            [Display(Name = "Nombre", Prompt = "Ingresa tu nombre")]
             public string Nombre { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "El campo apellido es requerido.")]
             [DataType(DataType.Text)]
-            [Display(Name = "Apellido")]
+            [Display(Name = "Apellido", Prompt = "Ingresa tu apellido")]
             public string Apellido { get; set; }
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "El campo contraseña es requerido.")]
+            [StringLength(100, ErrorMessage = "La contraseña debe contener al menos {2} caracteres y máximo {1}.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Contraseña")]
+            [Display(Name = "Contraseña", Prompt = "Ingresa tu contraseña.")]
             public string Password { get; set; }
 
+            [Required(ErrorMessage = "El campo confirmar contraseña es requerido.")]
             [DataType(DataType.Password)]
-            [Display(Name = "Confirmar Contraseña")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Confirmar contraseña", Prompt = "Confirma tu contraseña")]
+            [Compare("Password", ErrorMessage = "Las contraseñas deben coincidir.")]
             public string ConfirmPassword { get; set; }
         }
 
@@ -125,7 +127,6 @@ namespace TicketParcial.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return Page();
         }
     }
