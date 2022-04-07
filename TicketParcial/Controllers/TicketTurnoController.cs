@@ -64,9 +64,66 @@ namespace TicketParcial.Controllers
             return View(ticketTurnoModel);
         }
 
+        public async Task<int> NumeroMunTicketAsync(int idMunicipio)
+        {
+            var munic = from m in _context.TicketTurnoList
+                        select m;
+
+            munic = munic.Where(s => s.municipioID!.Equals(idMunicipio));
+
+
+            var municipios = await munic.ToListAsync();
+
+
+
+
+            int contador = municipios.Count();
+
+            if (contador == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return contador + 1;
+            }
+
+           
+        }
+
+        public async Task<int> SiguienteTicketAsync()
+        {
+            var munic = from m in _context.TicketTurnoList
+                        select m;
+
+
+
+            var municipios = await munic.ToListAsync();
+
+
+
+
+            int contador = municipios.Count();
+
+            if (contador == 1)
+            {
+                ViewData["numeroTicket"] = 1;
+                return 1;
+            }
+            else
+            {
+                return contador + 1;
+            }
+
+
+        }
+
         // GET: TicketTurnoModels/Create
         public IActionResult Create()
         {
+            int sig = _context.TicketTurnoList.Count();
+
+            ViewData["siguienteTurno"] = sig + 1;
             ViewData["municipioID"] = new SelectList(_context.MunicipiosList, "ID", "descripcion");
             ViewData["asuntoID"] = new SelectList(_context.AsuntosList, "ID", "descripcion");
             ViewData["nivelID"] = new SelectList(_context.NivelesList, "ID", "descripcion");
@@ -82,15 +139,19 @@ namespace TicketParcial.Controllers
         {
             if (ModelState.IsValid)
             {
+                ticketTurnoModel.munTickID = await NumeroMunTicketAsync(ticketTurnoModel.municipioID);
                 _context.Add(ticketTurnoModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
             ViewData["municipioID"] = new SelectList(_context.MunicipiosList, "ID", "descripcion",ticketTurnoModel.municipio);
             ViewData["asuntoID"] = new SelectList(_context.AsuntosList, "ID", "descripcion",ticketTurnoModel.asunto);
             ViewData["nivelID"] = new SelectList(_context.NivelesList, "ID", "descripcion",ticketTurnoModel.nivel);
             return View(ticketTurnoModel);
         }
+
+
 
         // GET: TicketTurnoModels/Edit/5
         public async Task<IActionResult> Edit(int? id)

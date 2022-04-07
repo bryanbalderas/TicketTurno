@@ -60,5 +60,7 @@ namespace TicketParcial.Models
         public int asuntoID {get; set;}
         public int municipioID { get; set; }
         public int nivelID { get; set; }
+
+        public int munTickID { get; set; }
     }
 }
