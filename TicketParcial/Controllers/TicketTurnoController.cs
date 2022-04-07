@@ -142,7 +142,15 @@ namespace TicketParcial.Controllers
                 ticketTurnoModel.munTickID = await NumeroMunTicketAsync(ticketTurnoModel.municipioID);
                 _context.Add(ticketTurnoModel);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (User.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction(nameof(Listadmin));
+                }
+                else
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                
             }
             
             ViewData["municipioID"] = new SelectList(_context.MunicipiosList, "ID", "descripcion",ticketTurnoModel.municipio);
