@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -77,7 +78,7 @@ namespace TicketParcial.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,nombreRealiza,curp,nombre,paterno,materno,telefono,celular,correo,municipioID")] TicketTurnoModel ticketTurnoModel)
+        public async Task<IActionResult> Create([Bind("ID,nombreRealiza,curp,nombre,paterno,materno,telefono,celular,correo,asuntoID,municipioID,nivelID")] TicketTurnoModel ticketTurnoModel)
         {
             if (ModelState.IsValid)
             {

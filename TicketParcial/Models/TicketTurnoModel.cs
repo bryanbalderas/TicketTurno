@@ -56,5 +56,9 @@ namespace TicketParcial.Models
         public MunicipioModel municipio { get; set; }
         [Display(Name = "¿Nivel al que desea ingresar o que ya cursa el alumno?")]
         public NivelModel nivel { get; set; }
+
+        public int asuntoID {get; set;}
+        public int municipioID { get; set; }
+        public int nivelID { get; set; }
     }
 }
