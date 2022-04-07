@@ -1,80 +1,93 @@
 ﻿@model TicketParcial.Models.TicketTurnoModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Actualizar ticket";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<a type="button" asp-action="Index" class="btn btn-secondary mb-5">
+    <i class="bi bi-arrow-return-left mr-1"></i>
+    Regresar
+</a>
 
-<h4>TicketTurnoModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID" />
-            <div class="form-group">
-                <label asp-for="nombreRealiza" class="control-label"></label>
-                <input asp-for="nombreRealiza" class="form-control" />
-                <span asp-validation-for="nombreRealiza" class="text-danger"></span>
+<div class="row d-flex justify-content-around">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h6 class="font-weight-bold">
+                    Ticket
+                </h6>
             </div>
-            <div class="form-group">
-                <label asp-for="curp" class="control-label"></label>
-                <input asp-for="curp" class="form-control" />
-                <span asp-validation-for="curp" class="text-danger"></span>
+            <div class="card-content p-4">
+                <form asp-action="Edit">
+                    <input type="hidden" asp-for="ID" />
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 form-group">
+                            <label asp-for="nombreRealiza" class="control-label">Nombre de quien tramita</label>
+                            <input asp-for="nombreRealiza" name="nombreRealiza" id="nombreRealiza" class="form-control" />
+                            <span asp-validation-for="nombreRealiza" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                            <label asp-for="curp" class="control-label">CURP</label>
+                            <input asp-for="curp" name="curp" id="curp" class="form-control" />
+                            <span asp-validation-for="curp" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-4 form-group">
+                            <label asp-for="nombre" class="control-label">Nombre</label>
+                            <input asp-for="nombre" name="nombre" id="nombre" class="form-control" />
+                            <span asp-validation-for="nombre" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 col-md-4 form-group">
+                            <label asp-for="paterno" class="control-label">Paterno</label>
+                            <input asp-for="paterno" name="paterno" id="paterno" class="form-control" />
+                            <span asp-validation-for="paterno" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 col-md-4 form-group">
+                            <label asp-for="materno" class="control-label">Materno</label>
+                            <input asp-for="materno" class="form-control" />
+                            <span asp-validation-for="materno" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="telefono" class="control-label"></label>
+                        <input asp-for="telefono" class="form-control" />
+                        <span asp-validation-for="telefono" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="celular" class="control-label"></label>
+                        <input asp-for="celular" class="form-control" />
+                        <span asp-validation-for="celular" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="correo" class="control-label"></label>
+                        <input asp-for="correo" class="form-control" />
+                        <span asp-validation-for="correo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="municipio" class="control-label">Municipio</label>
+                        <select asp-for="municipio" class="form-control" asp-items="ViewBag.municipioID"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="asunto" class="control-label">Asunto:</label>
+                        <select asp-for="asunto" class="form-control" asp-items="ViewBag.asuntoID"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="nivel" class="control-label">Nivel:</label>
+                        <select asp-for="nivel" class="form-control" asp-items="ViewBag.nivelID"></select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-warning text-white mt-3">
+                            <i class="bi bi-pencil mr-1"></i>
+                            Actualizar ticket
+                        </button>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="nombre" class="control-label"></label>
-                <input asp-for="nombre" class="form-control" />
-                <span asp-validation-for="nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="paterno" class="control-label"></label>
-                <input asp-for="paterno" class="form-control" />
-                <span asp-validation-for="paterno" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="materno" class="control-label"></label>
-                <input asp-for="materno" class="form-control" />
-                <span asp-validation-for="materno" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefono" class="control-label"></label>
-                <input asp-for="telefono" class="form-control" />
-                <span asp-validation-for="telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="celular" class="control-label"></label>
-                <input asp-for="celular" class="form-control" />
-                <span asp-validation-for="celular" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="correo" class="control-label"></label>
-                <input asp-for="correo" class="form-control" />
-                <span asp-validation-for="correo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="municipio" class="control-label">Municipio</label>
-                <select asp-for="municipio" class="form-control" asp-items="ViewBag.municipioID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="asunto" class="control-label">Asunto:</label>
-                <select asp-for="asunto" class="form-control" asp-items="ViewBag.asuntoID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="nivel" class="control-label">Nivel:</label>
-                <select asp-for="nivel" class="form-control" asp-items="ViewBag.nivelID"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
